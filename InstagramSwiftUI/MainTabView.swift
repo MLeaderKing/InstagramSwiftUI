@@ -10,6 +10,8 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var viewModel: AuthViewModel
 
+    let user: User
+    
     var body: some View {
         NavigationView {
             TabView {
@@ -17,7 +19,7 @@ struct MainTabView: View {
                 SearchView().tabItem { Image(systemName: "magnifyingglass") }
                 UploadPostView().tabItem { Image(systemName: "plus.square") }
                 NotificationView().tabItem { Image(systemName: "heart") }
-                ProfileView().tabItem { Image(systemName: "person") }
+                ProfileView(user: user).tabItem { Image(systemName: "person") }
             }
             .accentColor(.black)
             .navigationTitle("Home")
@@ -36,8 +38,8 @@ struct MainTabView: View {
     }
 }
 
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabView()
-    }
-}
+//struct MainTabView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainTabView()
+//    }
+//}

@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserListView: View {
+    @ObservedObject var viewModel: SearchViewModel
+    @Binding var searchText: String
+    
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(0..<20) { _ in
-                    NavigationLink(destination: ProfileView()) {
-                        UserCellView()
+                ForEach(searchText.isEmpty ? viewModel.users : viewModel.filterUsrs(searchText), id: \.id) { user in
+                    NavigationLink(destination: ProfileView(user: user)) {
+                        UserCellView(user: user)
                             .padding(.leading)
                     }
                 }
@@ -23,9 +27,11 @@ struct UserListView: View {
 }
 
 struct UserCellView: View {
+    let user: User
+    
     var body: some View {
         HStack {
-            Image("venom")
+            KFImage(URL(string: user.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 48, height: 48)
@@ -33,10 +39,10 @@ struct UserCellView: View {
                 .clipped()
             
             VStack(alignment: .leading) {
-                Text("Venom")
+                Text(user.username)
                     .font(.system(size: 14, weight: .semibold))
                 
-                Text("Bruce Wayne")
+                Text(user.fullname)
                     .font(.system(size: 14))
 
             }
@@ -46,8 +52,8 @@ struct UserCellView: View {
     }
 }
 
-struct UserListView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserListView()
-    }
-}
+//struct UserListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UserListView()
+//    }
+//}
