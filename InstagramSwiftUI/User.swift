@@ -15,5 +15,6 @@ struct User: Decodable, Identifiable {
     let fullname: String
     @DocumentID var id: String?
     
+    var isFollowed: Bool? = false
     var isCurrentUser: Bool { AuthViewModel().userSession?.uid == id }
 }

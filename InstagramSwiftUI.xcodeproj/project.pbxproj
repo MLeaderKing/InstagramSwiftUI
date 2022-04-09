@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6778433E2801AAB500836446 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6778433D2801AAB500836446 /* SearchViewModel.swift */; };
+		677843422801D8E700836446 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677843412801D8E700836446 /* ProfileViewModel.swift */; };
+		677843442801DB0800836446 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677843432801DB0800836446 /* UserService.swift */; };
 		67790C5928002ACB00685524 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 67790C5828002ACB00685524 /* Kingfisher */; };
 		67790C5B28002AFB00685524 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67790C5A28002AFB00685524 /* GoogleService-Info.plist */; };
 		67790C5D28002C0700685524 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67790C5C28002C0700685524 /* AuthViewModel.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		6778433D2801AAB500836446 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		677843412801D8E700836446 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		677843432801DB0800836446 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		67790C5A28002AFB00685524 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67790C5C28002C0700685524 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		67790C5E280031A100685524 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				67C916E527FEF3D8004769BE /* UploadPostView.swift */,
 				67C916EB27FEF3D8004769BE /* UserListView.swift */,
 				67790C5C28002C0700685524 /* AuthViewModel.swift */,
+				677843412801D8E700836446 /* ProfileViewModel.swift */,
+				677843432801DB0800836446 /* UserService.swift */,
 				6778433D2801AAB500836446 /* SearchViewModel.swift */,
 				67B6728C2801A35E00836FD7 /* User.swift */,
 				67B6728A2801A29E00836FD7 /* Constants.swift */,
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C916F127FEF3D8004769BE /* FeedView.swift in Sources */,
+				677843422801D8E700836446 /* ProfileViewModel.swift in Sources */,
 				67C916F427FEF3D8004769BE /* UserListView.swift in Sources */,
 				67790C5F280031A100685524 /* ImageUploader.swift in Sources */,
 				67C916D927FEEF22004769BE /* ContentView.swift in Sources */,
@@ -231,6 +238,7 @@
 				67C916F227FEF3D8004769BE /* SearchView.swift in Sources */,
 				67C916ED27FEF3D8004769BE /* PostGridView.swift in Sources */,
 				67790C5D28002C0700685524 /* AuthViewModel.swift in Sources */,
+				677843442801DB0800836446 /* UserService.swift in Sources */,
 				67C916EF27FEF3D8004769BE /* MainTabView.swift in Sources */,
 				67C916F527FEF3D8004769BE /* ProfileView.swift in Sources */,
 				67C916F027FEF3D8004769BE /* NotificationView.swift in Sources */,

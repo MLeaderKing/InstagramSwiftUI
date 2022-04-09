@@ -10,11 +10,16 @@ import Kingfisher
 
 struct ProfileView: View {
     let user: User
+    @ObservedObject var viewModel: ProfileViewModel
     
+    init(user: User) {
+        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
+    }
     var body: some View {
         ScrollView {
             VStack {
-                ProfileHeaderView(user: user)
+                ProfileHeaderView(viewModel: viewModel)
                 
                 PostGridView()
             }
@@ -23,12 +28,12 @@ struct ProfileView: View {
 }
 
 struct ProfileHeaderView: View {
-    let user: User
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                KFImage(URL(string: user.profileImageUrl))
+                KFImage(URL(string: viewModel.user.profileImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 80)
@@ -44,13 +49,13 @@ struct ProfileHeaderView: View {
                 Spacer()
             }
             
-            Text(user.fullname)
+            Text(viewModel.user.fullname)
                 .font(.system(size: 15, weight: .semibold))
 
             Text("Gotham's Dark Knoght || Billionaire")
                 .font(.system(size: 15))
 
-            ProfileActionButtonView(isCurrentUser: user.isCurrentUser)
+            ProfileActionButtonView(viewModel: viewModel)
         }
         .padding()
     }
@@ -73,11 +78,12 @@ struct UserStatView: View {
 }
 
 struct ProfileActionButtonView: View {
-    let isCurrentUser: Bool
-    var isFollowed = false
+    @ObservedObject var viewModel: ProfileViewModel
+
+    var isFollowed: Bool { viewModel.user.isFollowed ?? false }
     
     var body: some View {
-        if isCurrentUser {
+        if viewModel.user.isCurrentUser {
             Button {
                 
             } label: {
@@ -94,7 +100,7 @@ struct ProfileActionButtonView: View {
         } else {
             HStack {
                 Button {
-                    
+                    isFollowed ? viewModel.unfollow() : viewModel.follow()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 3)
