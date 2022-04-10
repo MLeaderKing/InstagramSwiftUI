@@ -9,22 +9,49 @@ import SwiftUI
 
 struct MainTabView: View {
     @EnvironmentObject var viewModel: AuthViewModel
-
+    @Binding var selectedIndex: Int
+    
     let user: User
     
     var body: some View {
         NavigationView {
             TabView {
-                FeedView().tabItem { Image(systemName: "house") }
-                SearchView().tabItem { Image(systemName: "magnifyingglass") }
-                UploadPostView().tabItem { Image(systemName: "plus.square") }
-                NotificationView().tabItem { Image(systemName: "heart") }
-                ProfileView(user: user).tabItem { Image(systemName: "person") }
+                FeedView()
+                    .onTapGesture { selectedIndex = 0 }
+                    .tabItem { Image(systemName: "house") }
+                    .tag(0)
+                SearchView()
+                    .onTapGesture { selectedIndex = 1 }
+                    .tabItem { Image(systemName: "magnifyingglass") }
+                    .tag(1)
+                UploadPostView(selectedIndex: $selectedIndex)
+                    .tabItem { Image(systemName: "plus.square") }
+                    .onTapGesture { selectedIndex = 2 }
+                    .tag(2)
+                NotificationView()
+                    .tabItem { Image(systemName: "heart") }
+                    .onTapGesture { selectedIndex = 3 }
+                    .tag(3)
+                ProfileView(user: user)
+                    .tabItem { Image(systemName: "person") }
+                    .onTapGesture { selectedIndex = 4 }
+                    .tag(4)
             }
             .accentColor(.black)
-            .navigationTitle("Home")
+            .navigationTitle(tabTitle)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: logoutButton)
+        }
+    }
+    
+    var tabTitle: String {
+        switch selectedIndex {
+        case 0: return "Feed"
+        case 1: return "Explore"
+        case 2: return "New Post"
+        case 3: return "Notifications"
+        case 4: return "Profile"
+        default: return ""
         }
     }
     

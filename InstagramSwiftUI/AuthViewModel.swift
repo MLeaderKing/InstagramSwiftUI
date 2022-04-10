@@ -14,7 +14,7 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
     
-//    static let shared = AuthViewModel()
+    static let shared = AuthViewModel()
     
     init() {
         userSession = Auth.auth().currentUser
@@ -39,7 +39,7 @@ class AuthViewModel: ObservableObject {
             return
         }
         
-        ImageUploader.uploadImage(image: image) { imageUrl in
+        ImageUploader.uploadImage(image: image, type: .profile) { imageUrl in
             Auth.auth().createUser(withEmail: email, password: password) { [unowned self] result, error in
                 if let error = error {
                     print(error)

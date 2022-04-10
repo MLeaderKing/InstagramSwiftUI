@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6767A38C280338EF00D1FCB2 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6767A38B280338EF00D1FCB2 /* UploadPostViewModel.swift */; };
 		6778433E2801AAB500836446 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6778433D2801AAB500836446 /* SearchViewModel.swift */; };
 		677843422801D8E700836446 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677843412801D8E700836446 /* ProfileViewModel.swift */; };
 		677843442801DB0800836446 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677843432801DB0800836446 /* UserService.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6767A38B280338EF00D1FCB2 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		6778433D2801AAB500836446 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		677843412801D8E700836446 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		677843432801DB0800836446 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				67C916EB27FEF3D8004769BE /* UserListView.swift */,
 				67790C5C28002C0700685524 /* AuthViewModel.swift */,
 				677843412801D8E700836446 /* ProfileViewModel.swift */,
+				6767A38B280338EF00D1FCB2 /* UploadPostViewModel.swift */,
 				677843432801DB0800836446 /* UserService.swift */,
 				6778433D2801AAB500836446 /* SearchViewModel.swift */,
 				67B6728C2801A35E00836FD7 /* User.swift */,
@@ -233,6 +236,7 @@
 				67C916F327FEF3D8004769BE /* ImagePicker.swift in Sources */,
 				67B6728D2801A35E00836FD7 /* User.swift in Sources */,
 				67B6728B2801A29E00836FD7 /* Constants.swift in Sources */,
+				6767A38C280338EF00D1FCB2 /* UploadPostViewModel.swift in Sources */,
 				67C916D727FEEF22004769BE /* InstagramSwiftUIApp.swift in Sources */,
 				67C916F727FEF486004769BE /* LoginView.swift in Sources */,
 				67C916F227FEF3D8004769BE /* SearchView.swift in Sources */,
